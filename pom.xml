@@ -78,30 +78,30 @@
 		
 		<!-- GSON -->
 		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.8.0</version><!--$NO-MVN-MAN-VER$-->
+		    <groupId>com.google.code.gson</groupId>
+		    <artifactId>gson</artifactId>
+		    <version>2.8.2</version>
 		</dependency>
 
 		<!-- jersey-client -->
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-client</artifactId>
-			<version>1.19</version>
+			<version>1.19.4</version>
 		</dependency>
 
 		<!-- jersey-core -->
 		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-core</artifactId>
-			<version>1.19</version>
+		    <groupId>org.glassfish.jersey.core</groupId>
+		    <artifactId>jersey-client</artifactId>
+		    <version>2.26</version>
 		</dependency>
 
 		<!-- jersey-json -->
 		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-json</artifactId>
-			<version>1.19</version>
+		    <groupId>com.sun.jersey</groupId>
+		    <artifactId>jersey-json</artifactId>
+		    <version>1.19.4</version>
 		</dependency>
 		
 		<!-- Pega as acusa das exceções -->
