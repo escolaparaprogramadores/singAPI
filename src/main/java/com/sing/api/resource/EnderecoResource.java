@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sing.api.model.Estabelecimento;
+import com.sing.api.model.Endereco;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 
@@ -16,37 +16,37 @@ import com.sun.jersey.api.client.WebResource;
 
 
 @RestController
-@RequestMapping("/empresa")
-public class EstabelecimentoResource {
+@RequestMapping("/endereco")
+public class EnderecoResource {
 	
 	
 	
 
-private Estabelecimento estabelecimento;
+private Endereco endereco;
 	
 
 
 
-	@GetMapping("/{cnpj}")
+	@GetMapping("/{cep}")
 	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_CATEGORIA') and #oauth2.hasScope('read')")
-	public ResponseEntity<Estabelecimento> carregarEndereco(@PathVariable Long cnpj)
+	public ResponseEntity<Endereco> carregarEndereco(@PathVariable Long cep)
 	{	
 		Client c = Client.create();
-		WebResource wr = c.resource("https://www.receitaws.com.br/v1/cnpj/"  + cnpj );
-		estabelecimento = buscarEnderecoPor((wr.get(String.class)));
-		return estabelecimento != null ? ResponseEntity.ok(estabelecimento) : ResponseEntity.notFound().build();
+		WebResource wr = c.resource("http://viacep.com.br/ws/" + cep + "/json/" );
+		endereco = buscarEnderecoPor((wr.get(String.class)));
+		return endereco != null ? ResponseEntity.ok(endereco) : ResponseEntity.notFound().build();
 	}
 	
 
 	
 	
-    public Estabelecimento buscarEnderecoPor(String urlJson) 
+    public Endereco buscarEnderecoPor(String urlJson) 
     {
 	
         GsonBuilder gsonBuilder = new GsonBuilder();
 		Gson gson = gsonBuilder.create();	
-		Estabelecimento retornoEstabelecimento = gson.fromJson(urlJson, Estabelecimento.class);		
-		return retornoEstabelecimento;
+		Endereco retornoEndereco = gson.fromJson(urlJson, Endereco.class);		
+		return retornoEndereco;
 
     }
 
