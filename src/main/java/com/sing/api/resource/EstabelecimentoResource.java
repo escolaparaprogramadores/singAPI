@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.sing.api.model.Estabelecimento;
-
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
+
+
+
 
 
 
