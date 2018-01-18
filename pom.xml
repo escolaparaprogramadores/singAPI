@@ -70,6 +70,16 @@
     		<artifactId>hibernate-java8</artifactId>
 		</dependency>
 		
+		<!-- SQL Server 2014 -->
+		 <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>sqljdbc4</artifactId>
+            <version>4.0</version>
+        </dependency>
+        
+		
+        
+		
 		<!-- Suporte do Jackson para as datas do Java 8 -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.datatype</groupId>
@@ -111,12 +121,12 @@
 			<version>3.4</version>
 		</dependency>
 		
-		<!-- Metamodel 
+		<!-- Metamodel -->
 		<dependency>
 		    <groupId>org.hibernate</groupId>
 		    <artifactId>hibernate-jpamodelgen</artifactId>
 		</dependency>
-		-->
+		
 		
 		<!-- Spring Security -->
 		<dependency>

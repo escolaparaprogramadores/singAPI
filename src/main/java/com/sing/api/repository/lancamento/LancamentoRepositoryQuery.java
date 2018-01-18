@@ -10,6 +10,8 @@ import com.sing.api.repository.filter.LancamentoFilter;
 import com.sing.api.repository.projection.ResumoLancamento;
 
 public interface LancamentoRepositoryQuery    {
+	
 	public Page<Lancamento> filtrar(LancamentoFilter lancamentoFilter, Pageable pageable);
 	public Page<ResumoLancamento> resumir(LancamentoFilter lancamentoFilter, Pageable pageable);
+
 }
